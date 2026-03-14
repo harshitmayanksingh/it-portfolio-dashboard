@@ -77,7 +77,7 @@ const useAuth = () => useContext(AuthContext);
 // 2. File → Share → Publish to web → Sheet1 → CSV format → Publish
 // 3. Copy the URL and paste it below as SHEET_CSV_URL
 // 4. The dashboard will fetch live data from Google Sheets on every load
-const SHEET_CSV_URL = import.meta.env.VITE_SHEET_URL || "";
+const SHEET_CSV_URL = (import.meta as any).env?.VITE_SHEET_URL || "";
 // In your .env file add: VITE_SHEET_URL=https://docs.google.com/spreadsheets/d/YOUR_ID/pub?output=csv
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
