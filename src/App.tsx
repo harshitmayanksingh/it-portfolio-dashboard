@@ -91,11 +91,24 @@ const RISK_COLOR:   Record<string,string> = { High:"#dc2626", Medium:"#d97706", 
 const PHASE_ORDER = ["Discovery","Planning","Execution","Validation","Closeout"];
 
 // ─── CSV PARSER ───────────────────────────────────────────────────────────────
+function splitCSVLine(line: string): string[] {
+  const result: string[] = [];
+  let cur = "", inQuote = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuote = !inQuote; }
+    else if (ch === ',' && !inQuote) { result.push(cur.trim()); cur = ""; }
+    else { cur += ch; }
+  }
+  result.push(cur.trim());
+  return result;
+}
+
 function parseCSV(text: string): Project[] {
   const lines = text.trim().split("\n");
-  const headers = lines[0].split(",").map(h => h.trim().replace(/"/g,""));
+  const headers = splitCSVLine(lines[0]).map(h => h.replace(/"/g,""));
   return lines.slice(1).map(line => {
-    const vals = line.split(",").map(v => v.trim().replace(/"/g,""));
+    const vals = splitCSVLine(line).map(v => v.replace(/"/g,""));
     const row: any = {};
     headers.forEach((h, i) => { row[h] = vals[i] || ""; });
     return {
