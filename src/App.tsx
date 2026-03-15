@@ -215,8 +215,8 @@ function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 items-center justify-center mb-4 shadow-xl">
-            <span className="text-white text-2xl font-black">IT</span>
+          <div className="inline-flex w-32 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 items-center justify-center mb-4 shadow-xl px-3">
+            <span className="text-white text-sm font-black leading-tight text-center">Insight<br/>Bridge</span>
           </div>
           <h1 className="text-2xl font-black text-white">IT Portfolio Dashboard</h1>
           <p className="text-blue-300 text-sm mt-1">InsightBridge · Pharma · Capstone 2026</p>
@@ -595,8 +595,8 @@ function Dashboard({allData}:{allData:Project[]}) {
       <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-20">
         <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-              <span className="text-white text-xs font-black">IT</span>
+            <div className="w-16 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center px-1">
+              <span className="text-white text-xs font-black leading-tight text-center">Insight<br/>Bridge</span>
             </div>
             <div>
               <div className="font-black text-slate-800 text-sm leading-none">IT Portfolio Dashboard</div>
