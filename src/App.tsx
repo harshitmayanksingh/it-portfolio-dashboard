@@ -612,11 +612,11 @@ function Dashboard({allData}:{allData:Project[]}) {
             </select>
             <select value={priF} onChange={e=>setPriF(e.target.value)}
               className="border border-slate-200 rounded-lg px-2 py-1.5 text-xs focus:outline-none bg-white">
-              {["All","High","Medium","Low"].map(p=><option key={p}>Priority: {p}</option>)}
+              {["All","High","Medium","Low"].map(p=><option key={p} value={p}>Priority: {p}</option>)}
             </select>
             <select value={healthF} onChange={e=>setHealthF(e.target.value)}
               className="border border-slate-200 rounded-lg px-2 py-1.5 text-xs focus:outline-none bg-white">
-              {["All","Green","Yellow","Red"].map(h=><option key={h}>Health: {h}</option>)}
+              {["All","Green","Yellow","Red"].map(h=><option key={h} value={h}>Health: {h}</option>)}
             </select>
             {(deptF!=="All"||priF!=="All"||healthF!=="All")&&(
               <button onClick={()=>{setDeptF("All");setPriF("All");setHealthF("All");}}
